@@ -1,0 +1,35 @@
+use("ashara_store");
+
+//Elimina todos los documentos de una colección
+db.products.drop();
+
+//si hay una colision de _id  si inserta pero hasta la colision
+db.products.insertMany(
+  [
+    {
+      _id: 1,
+      name: "Product 1",
+      price: "1000",
+    },
+    {
+      _id: 2,
+      name: "Product 2",
+      price: "20",
+    },
+    {
+      _id: 1,
+      name: "Product 1",
+      price: "300",
+    },
+    {
+      _id: 4,
+      name: "Product 4",
+      price: "3",
+    },
+  ],
+  {
+    ordered: false, //si hay una colision de _id  si inserta pero no inserta los colisionados
+  }
+);
+
+db.products.find();
