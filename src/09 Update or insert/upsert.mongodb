@@ -1,0 +1,18 @@
+use("Ashara-store");
+
+db.iot.updateOne(
+  {
+    sensor: "A001",
+    date: "2022-01-04",
+  },
+  {
+    $push: {
+      readings: 4514,
+    },
+  },
+  {
+    upsert: true,
+    //Cuando se agrega este operador se habilita la funcion upsert, la cual inserta cuando no existe un documento con los campos ingresados
+    // y actualiza solo el campo en push cuando ya hay documentos asociados.
+  }
+);

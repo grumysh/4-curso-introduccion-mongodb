@@ -1,0 +1,13 @@
+use("Ashara-store");
+
+db.iot.updateOne(
+  {
+    sensor: "A001",
+    date: "2022-01-03",
+  },
+  {
+    $push: {
+      readings: 2323,
+    },
+  }
+);
