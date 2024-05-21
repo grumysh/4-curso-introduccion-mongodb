@@ -1,0 +1,10 @@
+use("ashara_store");
+
+db.products.updateOne(
+  //Query
+  { _id: 2 },
+  // Change => Inc incrementa un valor numero en el numero enviado.
+  {
+    $inc: { price: 100 },
+  }
+);

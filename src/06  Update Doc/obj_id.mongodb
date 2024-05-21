@@ -1,0 +1,10 @@
+use("ashara_store");
+
+db.products.updateOne(
+  //Query
+  { _id: ObjectId("6648380cd6c99ad020c69a09") },
+  // Change => Inc incrementa un valor numero en el numero enviado.
+  {
+    $inc: { price: 100 },
+  }
+);
