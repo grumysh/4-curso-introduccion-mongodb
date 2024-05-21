@@ -1,0 +1,10 @@
+use("Ashara-store");
+
+db.products.update(
+  { _id: 4 },
+  {
+    $push: {
+      tags: "headphone",
+    },
+  }
+);

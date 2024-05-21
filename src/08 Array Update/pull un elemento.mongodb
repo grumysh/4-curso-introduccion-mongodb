@@ -1,0 +1,12 @@
+use("Ashara-store");
+
+  //Elimina un elemento de un array
+db.products.updateMany(
+  //Query vacio trae todos los documentos de la colección.
+  {},
+  {
+    $pull: {
+      tags: "book",
+    },
+  }
+);

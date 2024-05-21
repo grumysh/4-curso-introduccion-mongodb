@@ -1,0 +1,3 @@
+use("Ashara-store")
+
+db.products.find()

@@ -1,0 +1,13 @@
+use("Ashara-store");
+
+//Elimina vasrios elementos de un array
+db.products.updateMany(
+  {},
+  {
+    $pull: {
+      tags: {
+        $in: ["appliance", "school"],
+      },
+    },
+  }
+);
